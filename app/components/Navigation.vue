@@ -6,7 +6,7 @@
         <!-- Logo -->
         <NuxtLink to="/"
                   class="text-xl font-bold text-primary-700 hover:text-primary-800 transition-colors dark:text-primary-500 dark:hover:text-primary-400">
-          NuxtSite
+          Nuxt Showcase 003
         </NuxtLink>
 
         <!-- Desktop Navigation -->
@@ -96,7 +96,7 @@ const toggleColorMode = () => {
 const navItems = [
   { name: 'Home', path: '/', icon: HomeIcon },
   { name: 'About', path: '/about', icon: UserIcon },
-  { name: 'Services', path: '/services', icon: BriefcaseIcon },
+  { name: 'Nuxt UI', path: '/nuxt-ui', icon: BriefcaseIcon },
   { name: 'Contact', path: '/contact', icon: EnvelopeIcon },
 ]
 </script>

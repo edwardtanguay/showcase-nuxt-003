@@ -1,10 +1,12 @@
 <template>
   <div class="min-h-screen flex flex-col">
     <Navigation />
-    <main class="flex-1">
-      <slot />
+    <main class="flex-1 py-12">
+      <UContainer>
+        <slot />
+      </UContainer>
     </main>
-    <Footer />
+    <Footer/>
   </div>
 </template>
 

@@ -12,9 +12,9 @@ export default defineNuxtConfig({
 	},
 	app: {
 		head: {
-			title: 'Professional Nuxt Site',
+			title: 'Nuxt Showcase 003',
 			meta: [
-				{ name: 'description', content: 'A professional Nuxt 4 site with responsive navigation' }
+				{ name: 'description', content: 'A Nuxt 4 site with responsive navigation and color mode' }
 			]
 		}
 	},
