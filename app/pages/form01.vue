@@ -34,14 +34,20 @@ const submitForm = async () => {
   <section class="max-w-4xl mx-auto py-12 px-4">
     <UCard class="max-w-md mx-auto shadow-sm">
       <template #header>
-        <div class="flex items-center gap-2">
+        <div class="flex items-center align-middle gap-2">
           <UIcon name="i-heroicons-magnifying-glass-circle"
-                 class="w-6 h-6 text-primary" />
-          <h2 class="text-xl font-bold">Product Finder</h2>
+                 class="w-6 h-6 text-primary mt-1" />
+          <span class="text-2xl font-bold">Product Finder</span>
         </div>
-        <p class="text-sm text-gray-500 mt-1 dark:text-gray-400">
-          Search for products by ID (Try 1, 2, or 3)
-        </p>
+        <ul class="list-disc ml-5 text-sm text-gray-500 dark:text-gray-400 flex flex-col gap-3 mt-3">
+          <li>
+            search for product IDs 1-5
+          </li>
+          <li>
+            1, 2, 3 exist, 4, 5 don't exist
+          </li>
+          <li>50% of the time, server error occurs</li>
+        </ul>
       </template>
 
       <form @submit.prevent="submitForm"
@@ -53,11 +59,11 @@ const submitForm = async () => {
           <UInput v-model="num"
                   type="number"
                   icon="i-heroicons-hashtag"
-                  placeholder="e.g. 1"
                   size="lg"
                   :disabled="isSubmitting"
                   min="1"
-                  max="5" />
+                  max="5"
+                  class="mb-3" />
         </UFormGroup>
 
         <UButton type="submit"
@@ -76,7 +82,7 @@ const submitForm = async () => {
         <!-- Error State -->
         <UAlert v-if="errorMsg"
                 icon="i-heroicons-exclamation-triangle"
-                color="red"
+                color="error"
                 variant="soft"
                 title="Search Failed"
                 :description="errorMsg" />
