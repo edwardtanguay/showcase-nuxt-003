@@ -5,7 +5,7 @@ import type { TestProduct } from "~~/shared/types";
 const num = ref<number | null>(null);
 const testProduct = ref<TestProduct | null>(null);
 const errorMsg = ref<string | null>(null);
-const errorCode = ref<string | null>(null);
+const errorCode = ref<number | null>(null);
 const isSubmitting = ref(false);
 
 const submitForm = async () => {
@@ -82,10 +82,17 @@ const submitForm = async () => {
 
       <template #footer
                 v-if="testProduct || errorMsg">
-        <!-- Error State -->
-        <UAlert v-if="errorMsg"
+        <!-- Server Error -->
+        <UAlert v-if="errorMsg && errorCode && errorCode === 500"
                 icon="i-heroicons-exclamation-triangle"
                 color="error"
+                variant="soft"
+                title="Server Error"
+                :description="errorMsg" />
+        <!-- Other Errors -->
+        <UAlert v-if="errorMsg && errorCode && errorCode !== 500"
+                icon="i-heroicons-exclamation-triangle"
+                color="warning"
                 variant="soft"
                 title="Search Failed"
                 :description="errorMsg" />
