@@ -84,7 +84,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { HomeIcon, UserIcon, BriefcaseIcon, EnvelopeIcon, Bars3Icon, XMarkIcon, SunIcon, MoonIcon } from '@heroicons/vue/24/outline'
+import { HomeIcon, UserIcon, BriefcaseIcon, EnvelopeIcon, Bars3Icon, XMarkIcon, SunIcon, MoonIcon, ClipboardDocumentListIcon } from '@heroicons/vue/24/outline'
 
 const mobileMenuOpen = ref(false)
 const colorMode = useColorMode()
@@ -97,6 +97,6 @@ const navItems = [
   { name: 'Home', path: '/', icon: HomeIcon },
   { name: 'About', path: '/about', icon: UserIcon },
   { name: 'Nuxt UI', path: '/nuxt-ui', icon: BriefcaseIcon },
-  { name: 'Contact', path: '/contact', icon: EnvelopeIcon },
+  { name: 'Form01', path: '/form01', icon: ClipboardDocumentListIcon   },
 ]
 </script>
