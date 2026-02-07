@@ -5,6 +5,7 @@ import type { TestProduct } from "~~/shared/types";
 const num = ref<number | null>(null);
 const testProduct = ref<TestProduct | null>(null);
 const errorMsg = ref<string | null>(null);
+const errorCode = ref<string | null>(null);
 const isSubmitting = ref(false);
 
 const submitForm = async () => {
@@ -12,6 +13,7 @@ const submitForm = async () => {
 
   testProduct.value = null;
   errorMsg.value = null;
+  errorCode.value = null;
   isSubmitting.value = true;
 
   try {
@@ -23,6 +25,7 @@ const submitForm = async () => {
   }
   catch (err: any) {
     errorMsg.value = err.statusMessage || err.message || "Something unexpected happened.";
+    errorCode.value = err.statusCode;
   }
   finally {
     isSubmitting.value = false;
