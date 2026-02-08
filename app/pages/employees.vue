@@ -154,58 +154,72 @@ onMounted(() => {
 </script>
 
 <template>
-	<section class="max-w-7xl mx-auto py-12 px-4">
-		<!-- Page Header -->
-		<div class="mb-8">
-			<div class="flex flex-col sm:flex-row text-center sm:text-start items-center justify-between mb-4">
-				<div class="mb-3 sm:mb-0">
-					<h1 class="text-4xl font-bold mb-2">Employee Management</h1>
-					<p class="text-gray-600 dark:text-gray-400">Manage your team members and their information</p>
+	<div>
+
+		<UCard class="font-mono bg-indigo-200/50 dark:bg-indigo-900/20 border-indigo-200/50 dark:border-indigo-900/50">
+			<template #header>
+				<p>Note for online/offline use</p>
+			</template>
+			<ul class="list-disc ml-5 text-sm text-gray-500 dark:text-gray-400 flex flex-col gap-3 mt-3">
+				<li>this is a demo of a CRUD page that uses a backend API which makes changes to the data</li>
+				<li>when you use it locally, changes will be seen until you restart the node server (npm run dev)</li>
+				<li>when you use it online, these changes will persist for a short random amount of time</li>
+				<li>this allows you to see how the app works in an online environment</li>
+			</ul>
+		</UCard>
+		<section class="max-w-7xl mx-auto py-12 px-4">
+			<!-- Page Header -->
+			<div class="mb-8">
+				<div class="flex flex-col sm:flex-row text-center sm:text-start items-center justify-between mb-4">
+					<div class="mb-3 sm:mb-0">
+						<h1 class="text-4xl font-bold mb-2">Employee Management</h1>
+						<p class="text-gray-600 dark:text-gray-400">Manage your team members and their information</p>
+					</div>
+					<UButton v-if="!showForm"
+							 icon="i-heroicons-plus"
+							 size="lg"
+							 color="primary"
+							 @click="showAddForm">
+						Add Employee
+					</UButton>
 				</div>
-				<UButton v-if="!showForm"
-						 icon="i-heroicons-plus"
-						 size="lg"
-						 color="primary"
-						 @click="showAddForm">
-					Add Employee
-				</UButton>
 			</div>
-		</div>
 
-		<!-- Success Message -->
-		<UAlert v-if="successMsg"
-				icon="i-heroicons-check-circle"
-				color="success"
-				variant="soft"
-				title="Success"
-				:description="successMsg"
-				class="mb-6"
-				:close-button="{ icon: 'i-heroicons-x-mark', color: 'success', variant: 'link' }"
-				@close="successMsg = null" />
+			<!-- Success Message -->
+			<UAlert v-if="successMsg"
+					icon="i-heroicons-check-circle"
+					color="success"
+					variant="soft"
+					title="Success"
+					:description="successMsg"
+					class="mb-6"
+					:close-button="{ icon: 'i-heroicons-x-mark', color: 'success', variant: 'link' }"
+					@close="successMsg = null" />
 
-		<!-- Error Message -->
-		<UAlert v-if="errorMsg"
-				icon="i-heroicons-exclamation-triangle"
-				color="error"
-				variant="soft"
-				title="Error"
-				:description="errorMsg"
-				class="mb-6"
-				:close-button="{ icon: 'i-heroicons-x-mark', color: 'error', variant: 'link' }"
-				@close="errorMsg = null" />
+			<!-- Error Message -->
+			<UAlert v-if="errorMsg"
+					icon="i-heroicons-exclamation-triangle"
+					color="error"
+					variant="soft"
+					title="Error"
+					:description="errorMsg"
+					class="mb-6"
+					:close-button="{ icon: 'i-heroicons-x-mark', color: 'error', variant: 'link' }"
+					@close="errorMsg = null" />
 
-		<!-- Form Section -->
-		<div v-if="showForm"
-			 class="mb-8">
-			<EmployeesForm :employee="editingEmployee"
-						   @submit="handleFormSubmit"
-						   @cancel="handleCancel" />
-		</div>
+			<!-- Form Section -->
+			<div v-if="showForm"
+				 class="mb-8">
+				<EmployeesForm :employee="editingEmployee"
+							   @submit="handleFormSubmit"
+							   @cancel="handleCancel" />
+			</div>
 
-		<!-- Table Section -->
-		<EmployeesTable :employees="employees"
-						:loading="isLoading"
-						@edit="handleEdit"
-						@delete="handleDelete" />
-	</section>
+			<!-- Table Section -->
+			<EmployeesTable :employees="employees"
+							:loading="isLoading"
+							@edit="handleEdit"
+							@delete="handleDelete" />
+		</section>
+	</div>
 </template>
