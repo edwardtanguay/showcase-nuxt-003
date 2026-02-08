@@ -4,7 +4,11 @@ import type { TestProduct } from "../../shared/types";
 export default defineEventHandler(async (event) => {
 	const random = Math.floor(Math.random() * 2) + 1;
 	if (random === 2) {
-		throw createError({ statusCode: 500, statusMessage: "Server not responding, try again" });
+		throw createError({
+			statusCode: 500,
+			statusMessage: "Server not responding, try again",
+			data: { message: "Server not responding, try again" }
+		});
 	}
 
 	await new Promise(resolve => setTimeout(resolve, 2000));
@@ -19,7 +23,11 @@ export default defineEventHandler(async (event) => {
 
 	const obj = testProducts.find(o => o.id === num);
 	if (!obj) {
-		throw createError({ statusCode: 404, statusMessage: "Product not found" });
+		throw createError({
+			statusCode: 404,
+			statusMessage: "Product not found",
+			data: { message: "Product not found" }
+		});
 	}
 
 	return obj as TestProduct;

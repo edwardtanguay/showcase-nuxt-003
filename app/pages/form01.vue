@@ -24,7 +24,7 @@ const submitForm = async () => {
     testProduct.value = res;
   }
   catch (err: any) {
-    errorMsg.value = err.statusMessage || err.message || "Something unexpected happened.";
+    errorMsg.value = err.data?.message || err.statusMessage || err.message || "Something unexpected happened.";
     errorCode.value = err.statusCode;
   }
   finally {
