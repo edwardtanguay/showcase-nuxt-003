@@ -34,3 +34,8 @@ npm run dev
 ## Deployment
 
 - simply push to Vercel, all defaults will work
+
+## Explore more Edward's projects
+
+- https://edwards-projects.vercel.app 
+
