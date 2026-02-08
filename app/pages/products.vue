@@ -17,7 +17,7 @@ const submitForm = async () => {
   isSubmitting.value = true;
 
   try {
-    const res = await $fetch<TestProduct>("/api/form01", {
+    const res = await $fetch<TestProduct>("/api/products", {
       method: "POST",
       body: { num: num.value },
     });

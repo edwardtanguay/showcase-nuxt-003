@@ -1,3 +1,23 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+import { HomeIcon, UserIcon, BriefcaseIcon, Bars3Icon, XMarkIcon, SunIcon, MoonIcon, ClipboardDocumentListIcon, InformationCircleIcon } from '@heroicons/vue/24/outline'
+
+const mobileMenuOpen = ref(false)
+const colorMode = useColorMode()
+
+const toggleColorMode = () => {
+  colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
+}
+
+const navItems = [
+  { name: 'Home', path: '/', icon: HomeIcon },
+  { name: 'Nuxt UI', path: '/nuxt-ui', icon: BriefcaseIcon },
+  { name: 'Products', path: '/products', icon: ClipboardDocumentListIcon },
+  { name: 'Employees', path: '/employees', icon: UserIcon },
+  { name: 'About', path: '/about', icon: InformationCircleIcon },
+]
+</script>
+
 <template>
   <nav
        class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50 transition-colors duration-300">
@@ -81,22 +101,3 @@
     </Transition>
   </nav>
 </template>
-
-<script setup lang="ts">
-import { ref } from 'vue'
-import { HomeIcon, UserIcon, BriefcaseIcon, EnvelopeIcon, Bars3Icon, XMarkIcon, SunIcon, MoonIcon, ClipboardDocumentListIcon } from '@heroicons/vue/24/outline'
-
-const mobileMenuOpen = ref(false)
-const colorMode = useColorMode()
-
-const toggleColorMode = () => {
-  colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
-}
-
-const navItems = [
-  { name: 'Home', path: '/', icon: HomeIcon },
-  { name: 'Nuxt UI', path: '/nuxt-ui', icon: BriefcaseIcon },
-  { name: 'Form01', path: '/form01', icon: ClipboardDocumentListIcon   },
-  { name: 'About', path: '/about', icon: UserIcon },
-]
-</script>
