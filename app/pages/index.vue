@@ -1,3 +1,3 @@
 <template>
-  <h2>Home</h2>
+  <p>Welcome to this showcase, a place to experiment with Nuxt 4 features.</p>
 </template>

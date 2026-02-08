@@ -13,6 +13,9 @@ const message = ref('')
 
 </script>
 <template>
-  <h2>About</h2>
+  <ul>
+    <li>REPO: <a href="https://github.com/edwardtanguay/showcase-nuxt-003" target="_blank" class="underline">edwardtanguay/showcase-nuxt-003</a></li>
+    <li>LIVE: <a href="https://showcase-nuxt-003.vercel.app/"  target="_blank"class="underline">showcase-nuxt-003.vercel.app</a></li>
+  </ul>
 </template>
 
