@@ -26,6 +26,8 @@ npm run dev
 - Tailwind CSS
 - dark/light mode (useColorMode)
 - responsive navigation
+- interactive API forms with error handling
+- one-click publishing to Vercel
 
 ## Change layout colors
 
