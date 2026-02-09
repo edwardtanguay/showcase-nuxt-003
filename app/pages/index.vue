@@ -36,11 +36,11 @@ const features = [
     color: 'blue'
   },
   {
-    name: 'About',
-    path: '/about',
-    description: 'Project information and useful links',
-    icon: InformationCircleIcon,
-    color: 'gray'
+    name: 'Customers',
+    path: '/customers',
+    description: 'Example of a reactive form with useFetch()',
+    icon: UsersIcon,
+    color: 'blue'
   }
 ];
 </script>

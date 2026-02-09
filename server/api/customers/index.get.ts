@@ -1,5 +1,5 @@
 import { defineEventHandler } from "h3";
-import { employees } from "./data";
+import { customers } from "./data";
 
 export default defineEventHandler(async (event) => {
 	// Simulate network delay
@@ -9,12 +9,12 @@ export default defineEventHandler(async (event) => {
 	const searchTerm = String(query.q || '').toLowerCase();
 
 	if (!searchTerm) {
-		return employees;
+		return customers;
 	}
 
-	return employees.filter(emp =>
-		emp.firstName.toLowerCase().includes(searchTerm) ||
-		emp.lastName.toLowerCase().includes(searchTerm) ||
-		emp.position.toLowerCase().includes(searchTerm)
+	return customers.filter(customer =>
+		customer.firstName.toLowerCase().includes(searchTerm) ||
+		customer.lastName.toLowerCase().includes(searchTerm) ||
+		customer.email.toLowerCase().includes(searchTerm)
 	);
 });
