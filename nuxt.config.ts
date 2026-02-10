@@ -1,3 +1,5 @@
+import env from "./app/lib/env";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 	compatibilityDate: '2025-07-15',
@@ -24,5 +26,13 @@ export default defineNuxtConfig({
 			'@tailwindcss/postcss': {},
 			autoprefixer: {}
 		}
+	},
+	runtimeConfig: {
+		public: {
+			nodeEnv: env.NODE_ENV,
+			cacheDriver: env.CACHE_DRIVER,
+			logLevel: env.LOG_LEVEL
+		}
 	}
 })
+
