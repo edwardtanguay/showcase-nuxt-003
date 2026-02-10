@@ -25,26 +25,12 @@ This document provides instructions and guidelines for AI agents working on this
 *   `shared/`: Shared code between client and server (e.g., types).
 *   `public/`: Static assets.
 
-## Coding Conventions
+## Standards & Conventions
 
-### Frontend (Vue/Nuxt)
+Please refer to the following documents for detailed standards and conventions:
 
-*   **Script Setup**: Use `<script setup lang="ts">` for all components.
-*   **Styling**: Use Tailwind CSS utility classes directly in the template. Avoid `<style>` blocks unless necessary for complex custom styles.
-*   **UI Components**: Prioritize using `Nuxt UI` components (e.g., `<UButton>`, `<UInput>`) over raw HTML elements.
-*   **Icons**: Use icons from `@heroicons/vue` (as seen in `app/components/FeaturesGrid.vue`).
-*   **Data Fetching**: Use `useFetch` or `$fetch` for API calls.
-
-### Backend (Server API)
-
-*   **Handler Definition**: Use `defineEventHandler` from `h3`.
-*   **Error Handling**: Use `createError` to return structured errors (`statusCode`, `statusMessage`, `data`).
-*   **Typing**: Import shared types from `../../shared/types` to ensure type safety.
-*   **Validation**: Use explicit validation for request bodies (e.g., `zod` if needed, or manual checks).
-
-### Shared
-
-*   **Types**: Define interfaces used by both frontend and backend in `shared/types.ts`.
+*   [**CODING_STANDARDS.md**](./CODING_STANDARDS.md): Detailed coding style, naming conventions, and best practices for Frontend (Vue/Nuxt), Backend (Server API), and Shared code.
+*   [**CONVENTIONS.md**](./CONVENTIONS.md): Architectural patterns, directory structure, simulated API behavior, and data persistence strategies.
 
 ## Configuration
 
@@ -57,8 +43,8 @@ This document provides instructions and guidelines for AI agents working on this
 *   **Run Dev Server**: `npm run dev`
 *   **Build**: `npm run build`
 
-## Simulation & Data
+## Key Implementation Details
 
-*   **Latency**: Some API routes (e.g., `server/api/products.post.ts`, `server/api/employees/index.get.ts`) simulate network latency using `setTimeout`. Maintain this pattern for demonstration purposes if requested.
-*   **Random Errors**: Some API routes simulate random failures (e.g., 500 errors).
-*   **In-Memory Data**: Employee data is stored in-memory in `server/api/employees/data.ts`. Changes will not persist across server restarts.
+*   **Simulated Latency**: API routes (e.g., `server/api/products.post.ts`) simulate network latency using `setTimeout`.
+*   **Random Errors**: Some routes simulate random failures (500 errors).
+*   **In-Memory Data**: Employee data (`server/api/employees/data.ts`) is stored in-memory and resets on server restart.
