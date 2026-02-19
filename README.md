@@ -45,6 +45,18 @@ cd showcase-nuxt-003
 npm install
 ```
 
+### env file
+
+This is a dummy env file at the moment to demonstrate the zod validation.
+
+```
+NODE_ENV=development
+LOG_LEVEL=warn
+CACHE_DRIVER=redis
+TURSO_DATABASE_URL=libsql://test.turso.io
+TURSO_AUTH_TOKEN=eyJhbGciOiJIUzI1NiI
+```
+
 ### Development
 
 Start the development server:
