@@ -18,3 +18,10 @@ export interface Customer {
 	lastName: string;
 	email: string;
 }
+
+export interface Member {
+	id: number;
+	firstName: string;
+	lastName: string;
+	email: string;
+}
